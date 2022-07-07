@@ -34,7 +34,7 @@ const Content = styled.div`
 function Section(props) {
     return (
         <SSection
-            className={`Section ${props.className} ${props.gradient ? ' section--gradient' : ''}${props.yellow ? ' section--yellow' : ''}${props.darkGradient ? ' section--dark-gradient' : ''}${props.grey ? ' section--grey' : ''}`}
+            className={`Section ${props.className} ${props.variant === 'gradient' ? ' section--gradient' : ''}${props.variant === 'yellow' ? ' section--yellow' : ''}${props.variant === 'darkGradient' ? ' section--dark-gradient' : ''}${props.variant === 'grey' ? ' section--grey' : ''}`}
             id={props.id}
         >
             <Content className={`Content ${props.center ? ' content--center' : ''}`}>

@@ -9,6 +9,12 @@ export default {
     // More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'fullscreen',
   },
+  argTypes: {
+    variant: {
+      options: [null, 'gradient', 'yellow', 'darkGradient', 'grey'],
+      control: { type: 'radio' },
+    },
+  },
 };
 
 const Placeholder = styled.div`
@@ -22,23 +28,4 @@ const Template = (args) => (
     </Section>
   );
 
-export const Gradient = Template.bind({});
-Gradient.args = {
-  gradient: true,
-};
-
-export const Yellow = Template.bind({});
-Yellow.args = {
-  yellow: true,
-};
-
-
-export const DarkGradient  = Template.bind({});
-DarkGradient.args = {
-  darkGradient: true,
-};
-
-export const Grey  = Template.bind({});
-Grey.args = {
-  grey: true,
-};
+export const Default = Template.bind({});
