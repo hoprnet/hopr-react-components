@@ -1,25 +1,56 @@
 import React from 'react';
-import { within, userEvent } from '@storybook/testing-library';
+import styled from "@emotion/styled";
 
-import { Page } from './Page';
+import Layout from '../components/Layout';
+import Brick from '../components/Brick'
+import Section from '../components/Section'
+
+import imageFile from './assets/hopr_derp.gif';
 
 export default {
-  title: 'Example/Page',
-  component: Page,
+  title: 'Examples/Page',
+  component: Layout,
   parameters: {
     // More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'fullscreen',
   },
+  argTypes: {
+    sectionVariant: {
+      options: [null, 'gradient', 'yellow', 'darkGradient', 'grey'],
+      control: { type: 'radio' },
+    },
+  },
 };
 
-const Template = (args) => <Page {...args} />;
+const Placeholder = styled.div`
+  height: 300px; 
+  width: 300px
+`
 
-// More on interaction testing: https://storybook.js.org/docs/react/writing-tests/interaction-testing
-export const LoggedOut = Template.bind({});
+const Template = (args) => (
+    <Layout >
+      <Section
+          variant={args.sectionVariant}
+      >
+        {args.content}
+          {
+              args.showBrick &&
+              <Brick
+                  title="HOW IS THIS DONE?"
+                  text="As soon as you start a wallet, it gets in touch with the RPC provider to find out basic information such as your token balances and network (Ethereum, Polygon, Gnosis Chain, etc.)"
+                  image={imageFile}
+                  button={args.button}
+                  buttonHref={args.buttonHref}
+                  reverse={args.reverse}
+                  className={args.className}
+              />
+          }
+      </Section>
+    </Layout>
+  );
 
-export const LoggedIn = Template.bind({});
-LoggedIn.play = async ({ canvasElement }) => {
-  const canvas = within(canvasElement);
-  const loginButton = await canvas.getByRole('button', { name: /Log in/i });
-  await userEvent.click(loginButton);
+export const Default = Template.bind({});
+Default.args = {
+    content: "As soon as you start a wallet, it gets in touch with the RPC provider to find out basic information such as your token balances and network (Ethereum, Polygon, Gnosis Chain, etc.)",
+    showBrick: true,
 };
