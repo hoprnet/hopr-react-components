@@ -5,7 +5,6 @@ import Brick from '../components/Brick';
 import Section from '../components/Section';
 
 import imageFile from './assets/hopr_derp.gif';
-import {LoggedOut} from "./Header.stories";
 
 
 export default {

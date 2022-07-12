@@ -1,10 +1,6 @@
 import React from 'react';
-import styled from "@emotion/styled";
-
 import EncourageSection from '../components/EncourageSection';
-
 import typingBotAnimation from '../assets/animations/typing-bot-animation.json'
-import imageFile from "./assets/hopr_derp.gif";
 
 export default {
   title: 'Hopr/EncourageSection',
