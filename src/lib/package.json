@@ -45,7 +45,12 @@
   },
   "peerDependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@mui/material": "^5.8.7",
+    "lottie-web": "^5.9.6",
+    "react-id-generator": "^3.0.2"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1"
