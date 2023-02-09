@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build-package:win32": "rm -rf dist && SET NODE_ENV=production babel src/lib --out-dir dist --copy-files",
+    "build-package:win32": "del dist && SET NODE_ENV=production babel src/lib --out-dir dist --copy-files",
+    "build-package": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files",
     "rollup": "rollup -c --bundleConfigAsCjs"
   },
   "author": "Hopr | Michal Jadach ",

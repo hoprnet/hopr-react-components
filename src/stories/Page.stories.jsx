@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 import Layout from '../components/Layout';
 import Brick from '../components/Brick'
 import Section from '../components/Section'
+import Typography from "../components/Typography";
 
 import imageFile from './assets/hopr_derp.gif';
 
@@ -32,7 +33,9 @@ const Template = (args) => (
       <Section
           variant={args.sectionVariant}
       >
-        {args.content}
+          <Typography>
+              {args.content}
+          </Typography>
           {
               args.showBrick &&
               <Brick
